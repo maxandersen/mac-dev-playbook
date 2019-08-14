@@ -17,6 +17,7 @@ dotfiles_files:
   - .spacemacs
   - .mackup.cfg
   - .mackup
+  - .hammerspoon
   
 homebrew_installed_packages:
    - git
@@ -27,12 +28,15 @@ homebrew_installed_packages:
    - hub
    - ispell
    - tree
+   - jenv
+   - ack
     
 homebrew_taps:
    - homebrew/core
    - homebrew/cask
    - homebrew/cask-versions  # enables install of things like iterm2-beta
    - homebrew/homebrew-cask-drivers  # enables install of things like sonos
+   - AdoptOpenJDK/openjdk
 
 homebrew_cask_apps:
    - docker
@@ -48,15 +52,23 @@ homebrew_cask_apps:
    - spotify
    - sonos
    - mailmate
-   
+   - rambox
+   - typinator
+   - AdoptOpenJDK/openjdk/adoptopenjdk8
+   - adoptopenjdk11
+   - skyfonts
+   - snagit
+   - hammerspoon
+
 mas_installed_apps: 
   - { id: 964258399, name: "BusyContacts" }
   - { id: 445189367, name: "PopClip" }
   - { id: 406510909, name: "Leap" }
   - { id: 1384080005, name: "Tweetbot3Mac" }
+  - { id: 422293948, name: "IP Scanner Home" }
 
 #pip_packages: 
 #   - name: homeassistant-cli
 
-mas_email: apple@xam.dk
+mas_email: "apple@xam.dk"
 mas_signin_dialog: yes

@@ -1,0 +1,62 @@
+---
+dotfiles_repo: https://github.com/maxandersen/dotfiles.git
+dotfiles_repo_local_destination: "~/code/dotfiles"
+
+configure_dotfiles: yes # not yet, need a dotfiles repo first.
+
+configure_sudoers: no # relevant to vagrant - not sure i need it
+configure_terminal: no # seem to just be normal terminal. i want iterm2
+configure_osx: yes # looks useful, but not all fixes I want and need to be in dotfiles first
+
+prezto_name: https://github.com/maxandersen/prezto
+
+dotfiles_files:
+  - .gitignore
+  - .gitconfig
+  - .osx
+  - .spacemacs
+  - .mackup.cfg
+  - .mackup
+  
+homebrew_installed_packages:
+   - git
+   - zsh
+   - zsh-completions
+   - git-extras
+   - mackup
+   - hub
+   - ispell
+   - tree
+    
+homebrew_taps:
+   - homebrew/core
+   - homebrew/cask
+   - homebrew/cask-versions  # enables install of things like iterm2-beta
+   - homebrew/homebrew-cask-drivers  # enables install of things like sonos
+
+homebrew_cask_apps:
+   - docker
+   - dropbox
+   - firefox
+   - google-chrome
+   - iterm2-beta
+   - emacs
+   - 1password
+   - busycal
+   - launchbar
+   - opera
+   - spotify
+   - sonos
+   - mailmate
+   
+mas_installed_apps: 
+  - { id: 964258399, name: "BusyContacts" }
+  - { id: 445189367, name: "PopClip" }
+  - { id: 406510909, name: "Leap" }
+  - { id: 1384080005, name: "Tweetbot3Mac" }
+
+#pip_packages: 
+#   - name: homeassistant-cli
+
+mas_email: apple@xam.dk
+mas_signin_dialog: yes

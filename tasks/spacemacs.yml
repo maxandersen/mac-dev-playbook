@@ -1,0 +1,31 @@
+---
+- name: Check if Spacemacs is installed
+  stat:
+    path: "{{ spacemacs_local_destination }}/.git"
+  register: SpacemacsInstalled
+
+- name: Ensure Spacemacs destination {{ spacemacs_local_destination }} isempty
+  when: not (SpacemacsInstalled.stat.isdir is defined and SpacemacsInstalled.stat.isdir)
+  file:
+    state: absent
+    path: "{{ spacemacs_local_destination }}/"
+
+- name: Download and Install Spacemacs
+  when: not (SpacemacsInstalled.stat.isdir is defined and SpacemacsInstalled.stat.isdir)
+  git:
+    repo: "{{ spacemacs_name }}"
+    dest: "{{ spacemacs_local_destination }}"
+    version: "{{ spacemacs_branch }}"
+    accept_hostkey: yes
+
+- name: Check for Emacs configuration
+  stat:
+    path: ~{{ ansible_user_id }}/.spacemacs
+  register: spacemacsDotfileExists
+
+#TODO: Detect "correct" emacs installation path, rather than hard-coding it here.
+#- name: Update packages required for Spacemacs operation
+#  when: spacemacsDotfileExists.stat.exists
+#  command: "{{ homebrew_prefix }}/bin/emacs" --batch -l "~{{ ansible_user_id }}/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+#  changed_when: false
+

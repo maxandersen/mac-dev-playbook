@@ -1,0 +1,35 @@
+---
+### from https://raw.githubusercontent.com/jgoldfar/mac-dev-playbook/master/tasks/spacemacs-install.yml
+- name: Check if prezto is installed
+  stat:
+    path: "{{ prezto_local_destination }}/.git"
+  register: preztoInstalled
+
+- name: Ensure prezto destination {{ prezto_local_destination }} isempty
+  when: not (preztoInstalled.stat.isdir is defined and preztoInstalled.stat.isdir)
+  file:
+    state: absent
+    path: "{{ prezto_local_destination }}/"
+
+- name: Download and Install prezto
+  when: not (preztoInstalled.stat.isdir is defined and preztoInstalled.stat.isdir)
+  git:
+    repo: "{{ prezto_name }}"
+    dest: "{{ prezto_local_destination }}"
+    version: "{{ prezto_branch }}"
+
+- name: change shell to zsh
+  user:
+    name: "{{ ansible_env.USER }}"
+    shell: /usr/local/bin/zsh
+  become: yes
+
+- name: Link in zsh config from prezto
+  become: yes
+  shell: |
+    setopt EXTENDED_GLOB
+    for rcfile in {{ prezto_local_destination }}/runcoms/^README.md(.N); do
+      ln -s $rcfile ~{{ ansible_env.USER }}/.${rcfile:t}
+    done
+  args:
+     executable: /usr/local/bin/zsh

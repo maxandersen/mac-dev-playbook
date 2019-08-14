@@ -94,3 +94,18 @@ pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# Clone and configure spacemacs
+configure_spacemacs: yes
+
+configure_prezto: yes
+
+# Destination on local system for Spacemacs installation
+spacemacs_name: https://github.com/syl20bnr/spacemacs
+spacemacs_local_destination: ~{{ ansible_user_id }}/.emacs.d
+spacemacs_branch: master
+
+# Destination on local system for Prezto installation
+prezto_name: https://github.com/sorin-ionescu/prezto
+prezto_local_destination:  ~{{ ansible_user_id }}/.zprezto
+prezto_branch: master

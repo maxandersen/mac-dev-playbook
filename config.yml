@@ -18,7 +18,7 @@ dotfiles_files:
   - .mackup.cfg
   - .mackup
   - .hammerspoon
-  
+
 homebrew_installed_packages:
    - git
    - zsh
@@ -30,7 +30,10 @@ homebrew_installed_packages:
    - tree
    - jenv
    - ack
-    
+   - ag
+   - pdfgrep
+   - mobiledevice
+   
 homebrew_taps:
    - homebrew/core
    - homebrew/cask
@@ -59,6 +62,12 @@ homebrew_cask_apps:
    - skyfonts
    - snagit
    - hammerspoon
+   - obs
+   - camtwist
+   - elgato-stream-deck
+   - visual-studio-code
+   - pdfpen
+   - imazing
 
 mas_installed_apps: 
   - { id: 964258399, name: "BusyContacts" }
@@ -66,9 +75,9 @@ mas_installed_apps:
   - { id: 406510909, name: "Leap" }
   - { id: 1384080005, name: "Tweetbot3Mac" }
   - { id: 422293948, name: "IP Scanner Home" }
+  - { id: 508034739, name: "DockTime" }
 
 #pip_packages: 
 #   - name: homeassistant-cli
 
-mas_email: "apple@xam.dk"
 mas_signin_dialog: yes

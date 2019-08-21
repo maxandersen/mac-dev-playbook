@@ -87,6 +87,10 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
      - Tab Wrangler - https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=en
      - Typio Form Recovery - https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa?hl=en
   3. Configure rambox
+  4. install lightroom
+  5. elgato control center
+  6. setup modifiers on windows usb keyboards https://9to5mac.com/2016/03/17/how-to-remap-windows-keyboard-buttons-match-mac-layout/
+  
   
 ## Ansible for DevOps
 

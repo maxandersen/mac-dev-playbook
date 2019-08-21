@@ -8,19 +8,15 @@
 
    mobiledevice get_app_prop <identifer> CFBundleName
 
-. Now run:
+. Now run `cp existings_apps.txt ok_apps.txt`
+  and remove any apps from ok_apps.txt you don't want installed; keeping only the apps
+  you think are ok.
 
-   cp existings_apps.txt ok_apps.txt
-
-   and remove any apps from ok_apps.txt you don't want installed; keeping only the apps
-   you think are ok.
-
-. Now you can run the following command to see what apps you
-   have installed but are not ok with:
-
-   comm -13 ok_apps.txt existing_apps.txt
-   
-   If you see anything you don't like to be removed, add it back to ok_apps.txt
+. Now you can run the following command to see what apps you have installed but are not ok with:
++
+  comm -13 ok_apps.txt existing_apps.txt
++   
+  If you see anything you don't like to be removed, add it back to ok_apps.txt
 
  . Now to delete apps you don't want run:
 

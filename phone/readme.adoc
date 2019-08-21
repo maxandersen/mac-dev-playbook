@@ -8,18 +8,19 @@
 
    mobiledevice get_app_prop <identifer> CFBundleName
 
-. Now run `cp existings_apps.txt ok_apps.txt`
+. Run `cp existings_apps.txt ok_apps.txt`
   and remove any apps from ok_apps.txt you don't want installed; keeping only the apps
   you think are ok.
 
-. Now you can run the following command to see what apps you have installed but are not ok with:
-+
-  comm -13 ok_apps.txt existing_apps.txt
-+   
-  If you see anything you don't like to be removed, add it back to ok_apps.txt
+. Run the following command to see what apps you have installed but are not ok with.   If you see anything you don't like to be removed, add it back to ok_apps.txt
+
+
+   comm -13 ok_apps.txt existing_apps.txt
 
  . Now to delete apps you don't want run:
 
    comm -13 ok_apps.txt existing_apps.txt | xargs -n 1 -t mobiledevice uninstall_app
    
 Congratulations - you now have a clean iPhone without too much manual hassle.
+
+Next time don't copy existing_apps.txt and you can just keep installing things to your phone and next time easily clean it up based on the ok_apps.txt.

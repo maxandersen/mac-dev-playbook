@@ -8,6 +8,8 @@ configure_sudoers: no # relevant to vagrant - not sure i need it
 configure_terminal: no # seem to just be normal terminal. i want iterm2
 configure_osx: yes # looks useful, but not all fixes I want and need to be in dotfiles first
 
+configure_extra_packages: true
+
 prezto_name: https://github.com/maxandersen/prezto
 
 dotfiles_files:
@@ -33,7 +35,11 @@ homebrew_installed_packages:
    - ag
    - pdfgrep
    - mobiledevice
-   
+   - switchaudio-osx
+   - maven
+   - httpie
+   - node
+
 homebrew_taps:
    - homebrew/core
    - homebrew/cask
@@ -68,6 +74,11 @@ homebrew_cask_apps:
    - visual-studio-code
    - pdfpen
    - imazing
+   - netnewswire
+   - gpg-suite
+   - viscosity
+   - blue-jeans
+   - skype
 
 mas_installed_apps: 
   - { id: 964258399, name: "BusyContacts" }
@@ -75,9 +86,17 @@ mas_installed_apps:
   - { id: 406510909, name: "Leap" }
   - { id: 1384080005, name: "Tweetbot3Mac" }
   - { id: 422293948, name: "IP Scanner Home" }
-  - { id: 508034739, name: "DockTime" }
+  - { id: 508034739, name: "DockTime"  }
+  - { id: 1262957439, name: "Textual" }
 
 #pip_packages: 
 #   - name: homeassistant-cli
 
+gem_packages: 
+  - name: bundler
+    state: present # present/absent/latest, default: present
+    user_install:  yes
+
+
 mas_signin_dialog: yes
+ 

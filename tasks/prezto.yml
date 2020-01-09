@@ -29,7 +29,8 @@
   shell: |
     setopt EXTENDED_GLOB
     for rcfile in {{ prezto_local_destination }}/runcoms/^README.md(.N); do
-      ln -s $rcfile ~{{ ansible_env.USER }}/.${rcfile:t}
+      ln -s $rcfile ~{{ ansible_env.USER }}/.${rcfile:t} 2>&1
     done
   args:
      executable: /usr/local/bin/zsh
+  ignore_errors: True

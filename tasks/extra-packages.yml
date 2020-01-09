@@ -29,6 +29,6 @@
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
-    user_install: no
+    user_install: "{{ item.user_install | default(yes) }}"
     executable: "{{ item.executable | default(omit) }}"
   with_items: "{{ gem_packages }}"

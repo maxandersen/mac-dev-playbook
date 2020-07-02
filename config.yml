@@ -39,7 +39,9 @@ homebrew_installed_packages:
    - maven
    - httpie
    - node
-
+   - exa 
+   - bat 
+   
 homebrew_taps:
    - homebrew/core
    - homebrew/cask
